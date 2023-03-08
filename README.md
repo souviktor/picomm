@@ -16,3 +16,21 @@ Codes:
 In addition, on each of the 2 pis, we will need a python script to send data, that code is mqtt_test.py
 
   
+Steps: 
+1. First install mqtt on all pis:
+-> sudo apt-get install -y mosquitto mosquitto-clients
+2. The previous command will have automatically strated the broker. but if you run into any issues, restrat : 
+->sudo systemctl restart mosquitto
+3. The listener.py and ard1.py and ard2.py are all listening for incoming data and saving into files. run them one by one, each from a different terminal
+-> python listener.py
+-> python3 ard1.py
+-> python3 ard2.py
+
+4. At this point the main pi will be listening from 2 pis and 2 arduinos. If you have additional devices, you need additional arduino/pico you can create ard3.py etc. 
+If you have additional pi devices, just modify the listener.py to listen a new channel. 
+
+5. on the client pis, you can run the mqtt_test.py to produce data continuously to test if the communication is working. You need to use the code in mqtt_test.py in your actual data acquisition loop to enable sending actual data. 
+
+6. On teh main py, you can run master.py to just quickly check if all files are being updated in real time. 
+
+
