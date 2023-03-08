@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 
 # Define the IP address of the MQTT broker
 broker_address = "192.168.0.228"
+#change this to actual i paddress of the pi
 
 # Define the filename for writing the received messages
 filename_tof1 = "tof1.txt"
