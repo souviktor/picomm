@@ -3,6 +3,7 @@ import paho.mqtt.client as mqtt
 
 # Define the IP address of the MQTT broker
 broker_address = "192.168.0.228"
+#change this accordiingly
 
 # Create an MQTT client instance
 client = mqtt.Client()
